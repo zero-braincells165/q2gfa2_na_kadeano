@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    padding: 2dvh 0;
+    background: #1d1d1da1;
+    color: white;
+    position: fixed;
+    width: 100%;
+    font-family: 'Gill Sans', sans-serif;
+    font-size: 1.1rem;
+    z-index: 98;
+}
+
+section {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: start;
+    overflow: hidden;
+    padding: 4vh 2vw;
+}
+
+section#banner h1 {
+    position: relative;
+    font-family: 'Space Mono', monospace;
+    font-size: 100px;
+    z-index: 99;
+    text-align: center;
+    top: 25vh;
+    text-shadow: 5px 5px rgb(255, 224, 224);
+    background: linear-gradient(117deg, rgb(97, 97, 124) 0%, rgb(135, 135, 252) 68%, rgba(0, 86, 128, 1) 100%);
+    -webkit-background-clip: text; /* This ensures the gradient only applies to the text */
+    color: transparent; /* Set text color to transparent */
+}
+
+
+section#banner {
+    position: relative;
+    z-index: 80;
+    padding: 0;
+    background: linear-gradient(117deg, rgba(1, 1, 3, 1) 0%, rgba(7, 7, 79, 1) 68%, rgba(0, 86, 128, 1) 100%);
+}
+
+/* Heavenly bodies */
+.bodies {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 90;
+}
+
+#aria {
+    background-image: url('images/aria.gif');
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    animation: ariamotion 10s ease-in-out infinite;
+    z-index: 91; /* Adjusted z-index */
+}
+
+#devourer {
+    background-image: url('images/devourer.gif');
+    width: 100px;
+    height: 100px;
+    animation: blackholegrow 30s ease-in-out infinite;
+    z-index: 92;
+}
+
+#terra {
+    background-image: url('images/terra.gif');
+    width: 400px;
+    height: 400px;
+    animation: terramotion 60s ease-in-out infinite;
+    z-index: 93;
+}
+
+#stars {
+    background: black url('images/stars.gif') repeat center;
+    display: inline-block;
+    width: 100vw;
+    height: 100vh;
+    z-index: 81;
+    position: absolute;
+}
+
+#pallas {
+    background-image: url('images/pallas.gif');
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 50vh;
+    left: 0;
+    animation: flyThroughX 5s ease-in-out infinite;
+    z-index: 89;
+}
+
+#ambience {
+    background: linear-gradient(117deg, rgba(1, 1, 3, 0.247) 0%, rgba(7, 7, 79, 0.514) 68%, rgba(0, 85, 128, 0.24) 100%);
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: 83;
+    opacity: 0.75; /* Adjust the opacity as needed */
+}
+
+@keyframes ariamotion {
+    0% {
+        transform: translate(200px, -300px);
+    }
+    100% {
+        transform: translate(1400px, 1000px);
+    }
+}
+
+@keyframes terramotion {
+    0% {
+        transform: translate(200px, -300px);
+    }
+    100% {
+        transform: translate(1400px, 1000px);
+    }
+}
+
+@keyframes blackholegrow {
+    0% {
+        transform: scale(0.05);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(5);
+        opacity: 0;
+    }
+}
+
+@keyframes flyThroughX {
+    0% {
+        transform: translate(-400px, -400px);
+    }
+    100% {
+        transform: translate(1900px, 400px);
+    }
+}
